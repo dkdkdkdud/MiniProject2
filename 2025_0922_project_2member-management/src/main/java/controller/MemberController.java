@@ -85,8 +85,8 @@ public class MemberController {
             return "아이디는 3자 이상 영어로만 입력해야 합니다.";
         }
 
-        // TODO: 실제 DB 저장
-        session.setAttribute("user", new User(id, name, password)); // 테스트용
+//        // TODO: 실제 DB 저장
+//        session.setAttribute("user", new User(id, name, password)); // 테스트용
 
         return "success";
     }
