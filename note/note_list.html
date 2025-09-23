@@ -23,9 +23,55 @@ https://templatemo.com/tm-553-xtra-blog
 
         let msg = pet_name + "의 " + n_regdate + "월 월간통계보고서";
         document.getElementById("selected_msg").innerText = msg;
-    }   
+    }
+    
+    function chart(){
+        new Chart(document.getElementById("doughnut-chart"), {
+                type: 'doughnut',
+                data: {
+                labels: ["SEND SUCCESS", "SEND FAIL", "TOTAL"],
+                datasets: [
+                    {
+                    label: "CNT",
+                    backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"],
+                    data: [5000,2340,7340]
+                    }
+                ]
+                },
+                options: {
+                title: {
+                    display: true,
+                    text: 'COUNT'
+                }
+                }
+            });
+    }
 </script>
+<!-- 
+<script>
+                                new Chart(document.getElementById("doughnut-chart"), {
+                                        type: 'doughnut',
+                                        data: {
+                                        labels: ["SEND SUCCESS", "SEND FAIL", "TOTAL"],
+                                        datasets: [
+                                            {
+                                            label: "CNT",
+                                            backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"],
+                                            data: [5000,2340,7340]
+                                            }
+                                        ]
+                                        },
+                                        options: {
+                                        title: {
+                                            display: true,
+                                            text: 'COUNT'
+                                        }
+                                        }
+                                    });
+                                //responsive: true, // 반응형 웹에 맞게 크기 조절
+                            </script>
 
+-->
 </head>
 <body>
 	<header class="tm-header" id="tm-header">
@@ -105,7 +151,7 @@ https://templatemo.com/tm-553-xtra-blog
                         <option value="4">4월</option>
                     </select>
                     <!-- button -->
-                    <input type="button" class="btn btn-primary" value="선택" onclick="date_select()">
+                    <input type="button" class="btn btn-primary" value="선택" onclick="date_select(); chart()">
                 </div>
             </div>
             <div class="row tm-row">
@@ -114,32 +160,9 @@ https://templatemo.com/tm-553-xtra-blog
                         <div class="mb-4">
                             <h2 class="pt-2 tm-color-primary tm-post-title" id="selected_msg"></h2>
                             <div class="chart-container">
-                                <h1>월별 통계(도넛)</h1>
+                                <!-- <h1>월별 통계(도넛)</h1> -->
                                 <canvas id="doughnut-chart"></canvas>
-                            </div>
-
-                            <script>
-                                new Chart(document.getElementById("doughnut-chart"), {
-                                        type: 'doughnut',
-                                        data: {
-                                        labels: ["SEND SUCCESS", "SEND FAIL", "TOTAL"],
-                                        datasets: [
-                                            {
-                                            label: "CNT",
-                                            backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"],
-                                            data: [5000,2340,7340]
-                                            }
-                                        ]
-                                        },
-                                        options: {
-                                        title: {
-                                            display: true,
-                                            text: 'COUNT'
-                                        }
-                                        }
-                                    });
-                                //responsive: true, // 반응형 웹에 맞게 크기 조절
-                            </script>
+                            </div>                        
                         </div>
                         
                         <!-- Comments -->
