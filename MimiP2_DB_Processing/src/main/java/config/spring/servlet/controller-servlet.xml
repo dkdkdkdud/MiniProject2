@@ -13,7 +13,7 @@
    <!--  <context:annotation-config/> -->
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
-	<mvc:resources mapping="/resources/**" location="/resources/" />
+	<mvc:resources mapping="/**" location="/" />
 
 	<!-- Auto-Detecting : Controller 자동생성 코드 -->
     <!-- <context:component-scan base-package="controller"/> -->
