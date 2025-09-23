@@ -19,6 +19,18 @@ create table note
 	pet_idx		int								-- FK
 )
 
+
+--또는 note 테이블
+create table note1
+(
+	n_idx		int,							-- 일련번호
+	n_regdate	date,							-- 등록일자
+	n_case		varchar2(200) not null,			-- '구토','무기력','배변','식욕','호흡','수면패턴'
+	n_walk		number(1) default 0 not null,	-- 산책
+	n_memo	 	clob not null,					-- 증상에 대한 메모(최대4GB저장가능한 대용량 데이터)
+	pet_idx		int								-- FK
+)
+
 -- 기본키 설정
 alter table note
 	add constraint pk_note_n_idx primary key(n_idx);
